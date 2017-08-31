@@ -174,4 +174,6 @@ public class Settings extends SettingsActivity {
     // LiveDisplay
     public static class LiveDisplaySettingsActivity extends SettingsActivity { /* empty */ }
 
+    // Evolution X
+    public static class EvolutionSettingsActivity extends SettingsActivity {}
 }
