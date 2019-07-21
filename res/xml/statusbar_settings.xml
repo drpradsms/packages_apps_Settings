@@ -60,4 +60,22 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
+    <Preference
+        android:key="traffic_settings"
+        android:title="@string/traffic_category"
+        android:summary="@string/network_traffic_state_title"
+        android:fragment="com.evolution.settings.fragments.TrafficSettings" />
+ 
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="roaming_indicator_icon"
+            android:title="@string/roaming_indicator_icon_title"
+            android:summary="@string/roaming_indicator_icon_summary"
+            android:defaultValue="false"/>
+
+        <com.evolution.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_old_mobiletype"
+            android:title="@string/use_old_mobiletype_title"
+            android:summary="@string/use_old_mobiletype_summary"
+            android:defaultValue="false" />
+
 </PreferenceScreen>
