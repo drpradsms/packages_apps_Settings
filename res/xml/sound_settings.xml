@@ -86,6 +86,13 @@
         android:order="-138"
         settings:controller="com.android.settings.notification.LinkedVolumesPreferenceController"/>
 
+  <!-- Audio Panel view -->
+        <PreferenceScreen
+            android:key="volume_panel"
+            android:title="@string/audio_panel_view_title"
+            android:summary="@string/audio_panel_view_summary"
+            android:fragment="com.evolution.settings.fragments.VolumePanel" />
+
     <!-- Also vibrate for calls -->
     <SwitchPreference
         android:key="vibrate_when_ringing"
