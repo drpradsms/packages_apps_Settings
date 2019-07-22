@@ -62,7 +62,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
     private static final String KEY_DISPLAY_COLOR = "color_calibration";
     private static final String KEY_PICTURE_ADJUSTMENT = "picture_adjustment";
 
-    private static final String KEY_LIVE_DISPLAY_COLOR_PROFILE = "live_display_color_profile";
+/**    private static final String KEY_LIVE_DISPLAY_COLOR_PROFILE = "live_display_color_profile"; **/
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
 
@@ -72,9 +72,6 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
                     final LineageHardwareManager hardwareManager = LineageHardwareManager.getInstance(context);
                     final List<String> result = new ArrayList<String>();
 
-                    if (!config.hasFeature(FEATURE_DISPLAY_MODES)) {
-                        result.add(KEY_LIVE_DISPLAY_COLOR_PROFILE);
-                    }
                     if (!config.hasFeature(FEATURE_OUTDOOR_MODE)) {
                         result.add(KEY_LIVE_DISPLAY_AUTO_OUTDOOR_MODE);
                     }
@@ -106,10 +103,10 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
                     return result;
                 }
             };
-    private static final String COLOR_PROFILE_TITLE =
+/**    private static final String COLOR_PROFILE_TITLE =
             KEY_LIVE_DISPLAY_COLOR_PROFILE + "_%s_title";
     private static final String COLOR_PROFILE_SUMMARY =
-            KEY_LIVE_DISPLAY_COLOR_PROFILE + "_%s_summary";
+            KEY_LIVE_DISPLAY_COLOR_PROFILE + "_%s_summary"; **/
     private SwitchPreference mColorEnhancement;
     private SwitchPreference mLowPower;
     private SwitchPreference mOutdoorMode;
@@ -139,14 +136,14 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
         PreferenceCategory advancedPrefs = (PreferenceCategory)
                 findPreference(KEY_CATEGORY_ADVANCED);
 
-        mColorProfile = (ListPreference) findPreference(KEY_LIVE_DISPLAY_COLOR_PROFILE);
+    /**    mColorProfile = (ListPreference) findPreference(KEY_LIVE_DISPLAY_COLOR_PROFILE);
         if (liveDisplayPrefs != null && mColorProfile != null
                 && (!mConfig.hasFeature(FEATURE_DISPLAY_MODES) || !updateDisplayModes())) {
             liveDisplayPrefs.removePreference(mColorProfile);
         } else {
             mHasDisplayModes = true;
             mColorProfile.setOnPreferenceChangeListener(this);
-        }
+        } **/
 
         mOutdoorMode = (SwitchPreference) findPreference(KEY_LIVE_DISPLAY_AUTO_OUTDOOR_MODE);
         if (liveDisplayPrefs != null && mOutdoorMode != null
@@ -196,7 +193,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
     @Override
     public void onResume() {
         super.onResume();
-        updateColorProfileSummary(null);
+/**     updateColorProfileSummary(null); **/
         updateReadingModeStatus();
     }
 
@@ -212,7 +209,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
         }
     }
 
-    private boolean updateDisplayModes() {
+/**    private boolean updateDisplayModes() {
         final DisplayMode[] modes = mHardware.getDisplayModes();
         if (modes == null || modes.length == 0) {
             return false;
@@ -273,10 +270,10 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
         mColorProfile.setValue(value);
         mColorProfile.setSummary(mColorProfileSummaries[idx]);
     }
-
+**/
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mColorProfile) {
+       /**  if (preference == mColorProfile) {
             int id = Integer.valueOf((String) objValue);
             Log.i("LiveDisplay", "Setting mode: " + id);
             for (DisplayMode mode : mHardware.getDisplayModes()) {
@@ -286,7 +283,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements I
                     break;
                 }
             }
-        } else if (preference == mReadingMode) {
+        } else **/ if (preference == mReadingMode) {
             mHardware.set(LineageHardwareManager.FEATURE_READING_ENHANCEMENT, (Boolean) objValue);
         }
         return true;

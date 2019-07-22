@@ -53,7 +53,8 @@ LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
     frameworks/support/v14/preference/res \
     frameworks/support/v7/appcompat/res \
     frameworks/support/v7/recyclerview/res \
-    packages/apps/Evolution/res
+    packages/apps/Evolution/res \
+    device/oneplus/sdm845-common/DisplayMode/res
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 

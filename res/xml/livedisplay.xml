@@ -23,10 +23,15 @@
         android:key="live_display_options">
 
         <!-- Color profile -->
-        <ListPreference
-                android:key="live_display_color_profile"
-                android:title="@string/live_display_color_profile_title"
-                android:persistent="false" />
+      <Preference
+            android:key="panel_category"
+            android:title="@string/panel_category_title"
+            android:summary="@string/panel_category_summary"
+            android:persistent="false" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="org.lineageos.settings.DisplayMode"
+                    android:targetClass="org.lineageos.settings.DisplayMode.PanelSettingsActivity" />
+        </Preference>
 
         <!-- Outdoor mode / SRE -->
         <com.android.settings.custom.preference.SystemSettingSwitchPreference
