@@ -36,4 +36,19 @@
         settings:userRestriction="no_config_brightness"
         settings:allowDividerAbove="true" />
 
+    <PreferenceCategory
+        android:title="@string/auto_brightness_qs_title">
+  
+    <com.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_auto_brightness_button"
+            android:title="@string/tuner_show_brightness_mode"
+            android:defaultValue="false" />
+
+     <com.evolution.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_brightness_side_buttons"
+            android:title="@string/tuner_show_brightness_side_buttons"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
